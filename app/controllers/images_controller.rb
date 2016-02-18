@@ -11,13 +11,13 @@ class ImagesController < ApplicationController
     if @image.image_file_name.present? && @image.save
         flash[:success] = "Image uploaded successfully"
     else
-        flash[:danger] = "Image upload failed"
+        flash[:danger] = "Image upload failed. You're so dumb Katie"
     end
     redirect_to url_for(:images_new)
   end
 
   private
-  def message_params
+  def image_params
     params.require(:image).permit(:category, :tags, :image)
   end
 end
