@@ -17,6 +17,6 @@ class ImagesController < ApplicationController
 
   private
   def message_params
-    params.require(:image).permit(:category, :tags)
+    params.require(:image).permit(:category, :tags, :image)
   end
 end
