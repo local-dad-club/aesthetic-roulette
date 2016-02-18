@@ -7,16 +7,17 @@ class ImagesController < ApplicationController
 
   # Add a new image to the database
   def create
-    @image = Image.new(message_params)
+    @image = Image.new(image_params)
     if @image.save
         flash[:success] = "Succesful upload!"
     else
         flash[:danger] = "Upload failed! You're so dumb Katie"
     end
+    redirect_to url_for(:images_new)
   end
 
   private
-  def message_params
+  def image_params
     params.require(:image).permit(:category, :tags, :image)
   end
 end
