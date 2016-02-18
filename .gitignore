@@ -15,11 +15,6 @@
 /log/*.log
 /tmp
 
-<<<<<<< HEAD
-# Ignore saved images
-/public/system
-=======
-
 # Ignore database images
 /public/system/images/images/*
->>>>>>> e74008404cdbc6758e2a76cd3bc9dea250fcb13f
+
