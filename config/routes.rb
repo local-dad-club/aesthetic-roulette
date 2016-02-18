@@ -55,4 +55,7 @@ Rails.application.routes.draw do
   #   end
 
   root 'static_pages#landing'
+  get 'images' => 'images#index'
+  get 'images/new' => 'images#new'
+  post 'images' => 'images#create'
 end
