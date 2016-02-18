@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
   # Add a new image to the database
   def create
     @image = Image.new(message_params)
-    if @message.save
+    if @image.save
         redirect_to '/images'
     else
         redirect_to 'new'
@@ -17,6 +17,6 @@ class ImagesController < ApplicationController
 
   private
   def message_params
-    params.require(:image).permit(:category, :tags, :image)
+    params.require(:image).permit(:category, :tags)
   end
 end
