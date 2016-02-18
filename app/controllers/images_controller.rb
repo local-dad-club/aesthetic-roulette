@@ -8,11 +8,12 @@ class ImagesController < ApplicationController
   # Add a new image to the database
   def create
     @image = Image.new(message_params)
-    if @image.save
-        redirect_to '/images'
+    if @image.image_file_name.present? && @image.save
+        flash[:success] = "Image uploaded successfully"
     else
-        redirect_to 'new'
+        flash[:danger] = "Image upload failed"
     end
+    redirect_to url_for(:images_new)
   end
 
   private
