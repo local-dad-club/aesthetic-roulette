@@ -9,9 +9,9 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(message_params)
     if @image.save
-        redirect_to '/images'
+        flash[:success] = "Succesful upload!"
     else
-        redirect_to 'new'
+        flash[:danger] = "Upload failed! You're so dumb Katie"
     end
   end
 
